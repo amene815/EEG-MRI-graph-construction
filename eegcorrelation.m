@@ -25,8 +25,9 @@ for sub = 1:10
     
     load('tmp.mat')
     rho = corrcoef(D.data(:,:)');
-    mkdir(sprintf('correlation/sub-xp1%02d',sub))
-    save(sprintf('correlation/sub-xp1%02d/%s.m',sub, r), 'rho');
+    labels = arrayfun(@(x) string(x.label), D.channels);
+    mkdir(sprintf('correlation/sub-xp1%02d',sub));
+    save(sprintf('correlation/sub-xp1%02d/%s.mat',sub, r), 'rho', 'labels');
     end
 end
 
@@ -56,7 +57,7 @@ for sub = 1:22
     load('tmp.mat')
     rho = corrcoef(D.data(:,:)');
     labels = arrayfun(@(x) string(x.label), D.channels);
-    mkdir(sprintf('correlation/sub-xp2%02d',sub))
-    save(sprintf('correlation/sub-xp2%02d/%s.m',sub, r), 'rho', 'labels');
+    mkdir(sprintf('correlation/sub-xp2%02d',sub));
+    save(sprintf('correlation/sub-xp2%02d/%s.mat',sub, r), 'rho', 'labels');
     end
 end
