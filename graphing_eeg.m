@@ -26,10 +26,10 @@ G = graph(A,labels);
 
 plot(G,'XData',positions(:,1),'YData',positions(:,2))%,'ZData',positions(:,3))
 
-% pr = centrality(G,'pagerank','FollowProbability',0.85);
-% labels = labels';
-% [pr_sorted, pr_order] = sort(pr,"descend");
-% 
-% labels_sorted = labels(pr_order,:);
-% 
-% labeled_pr = [labels_sorted, pr_sorted]
+pr = centrality(G,'pagerank','FollowProbability',0.85);
+labels = labels';
+[pr_sorted, pr_order] = sort(pr,"descend");
+
+labels_sorted = labels(pr_order,:);
+
+labeled_pr = [labels_sorted, pr_sorted]
