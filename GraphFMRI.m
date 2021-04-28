@@ -18,7 +18,7 @@ plot(G,'XData',loc(:,1),'YData',loc(:,2),'ZData',loc(:,3))
 
 load(".\correlation\sub-xp101\eegfmriNF.mat");
 eeg_node_locations = tdfread('eeg-node-positions-3d.tsv');
-positions = zeros(64,3);
+positions = zeros(63,3);
 
 
 for i = 1:size(labels,2)
